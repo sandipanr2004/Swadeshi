@@ -1,0 +1,116 @@
+.category-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.category-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.category-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(212, 175, 55, 0.1) 100%);
+  color: var(--primary);
+  border: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
+}
+
+.category-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--dark);
+  transition: color 0.3s ease;
+}
+
+.category-card:hover .category-name {
+  color: var(--primary);
+}
+
+.category-description {
+  color: var(--gray);
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  flex: 1;
+}
+
+.category-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.category-count {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.arrow-icon {
+  color: var(--primary);
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.category-card:hover .arrow-icon {
+  transform: translateX(6px);
+}
